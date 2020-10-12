@@ -42,7 +42,7 @@ public class JsonExample : MonoBehaviour {
     IEnumerator RequestWebService ()
     {
         // local or remote path for JSON file
-        string uri = "file:///Users/owenmundy/Documents/_code/Unity/dig250-game-art-dev/Examples_Davidson/Assets/Data_Handling/Data/gradients-by-mid.json";
+        string uri = "file:///Users/owenmundy/Documents/_code/Unity/dig250-game-art-dev/sample-unity-data/Assets/Data_Handling/Data/gradients-by-mid.json";
         print (uri);
 
         // create new UnityWebRequest and get URI
