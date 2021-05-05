@@ -11,6 +11,7 @@ public class BallManager : MonoBehaviour {
     public int originIndex = 0;
     public int destIndex = 0;
     public GameObject ballPrefab;
+	public float spawnRate = 1.0f;
 
     void Start ()
     {
@@ -21,7 +22,10 @@ public class BallManager : MonoBehaviour {
     IEnumerator InitCreatorLoop (float wait)
     {
         while (true) {
-            // after a moment
+			// change the spawnRate if you like (untested)
+        	//spawnRate = Random.Range(1.0f, 3.0f);
+			// wait = spawnRate;
+			// after a moment
             yield return new WaitForSeconds (wait);
             // create a new ball
             CreateNewBall ();
@@ -32,7 +36,7 @@ public class BallManager : MonoBehaviour {
     {
         // update origin index
         originIndex++;
-        // make sure it isn't > than array 
+        // make sure it isn't > than array
         if (originIndex >= spawnColliders.Length) originIndex = 0;
         // set destination index
         if (originIndex < 2) destIndex = originIndex + 2; // 0,2 or 1,3
