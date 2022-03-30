@@ -6,6 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/AdditiveSceneLoading/Scenes/Global_GameManager.unity
+    guid: 1cc787f6791254404998b5ff12dfe5c3
+  - enabled: 1
+    path: Assets/AdditiveSceneLoading/Scenes/Global_GameUI.unity
+    guid: 827bc875667d44154adddcddc6f9824f
+  - enabled: 1
+    path: Assets/AdditiveSceneLoading/Scenes/StartScreen.unity
+    guid: 63d2e156febfb4162ac18f53ef587de7
+  - enabled: 1
+    path: Assets/AdditiveSceneLoading/Scenes/World_1.unity
+    guid: ea63ea71d65624b949705f3adf722ce1
+  - enabled: 1
+    path: Assets/AdditiveSceneLoading/Scenes/World_2.unity
+    guid: 1d9fe55c2f74e4f429b0d3a840c128eb
+  - enabled: 1
+    path: Assets/AdditiveSceneLoading/Scenes/Credits.unity
+    guid: 9fb11764c016045fb9ff0e423afadd5d
+  - enabled: 1
+    path: Assets/Event_Manager/AdditiveSceneTest.unity
+    guid: 02b1deff1cd9640499f4a27d86218b31
   m_configObjects: {}
