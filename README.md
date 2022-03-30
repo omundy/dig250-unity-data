@@ -12,7 +12,7 @@ A sample Unity (2021.2.7f1) project with:
 
 - Notify other game objects (even across additive scenes) about events using [EventManager](https://learn.unity.com/tutorial/create-a-simple-messaging-system-with-events#)
 
-<a href="Assets/_screenshots/screenshot-object-manager.png"><img width="500" src="Assets/_screenshots/screenshot-eventmanager.png"></a>
+<a href="Assets/_screenshots/screenshot-eventmanager.png"><img width="500" src="Assets/_screenshots/screenshot-eventmanager.png"></a>
 
 
 
