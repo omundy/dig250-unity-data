@@ -36,6 +36,15 @@ A sample Unity (2021.2.7f1) project with:
 
 
 
+## Scriptable Object Example
+
+- Uses Scriptable Objects (serialized data containers) to store details about random events that can happen in a game.
+- See [Unity Manual: ScriptableObject](https://docs.unity3d.com/Manual/class-ScriptableObject.html) or [this reference sheet](https://github.com/omundy/dig250-game-art-dev/blob/main/reference-sheets/Unity-Scripting-Collections.md) for details
+
+<a href="Assets/_screenshots/screenshot-scriptables.png"><img width="500" src="Assets/_screenshots/screenshot-scriptables.png"></a>
+
+
+
 ## Strategy Pattern
 
 - Implementation of composition over inheritance using C# interfaces
