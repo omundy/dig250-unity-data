@@ -1,7 +1,7 @@
 
 
 
-# Sample Unity Data
+# dig250-unity-data
 
 A sample Unity (2021.2.7f1) project with:
 
