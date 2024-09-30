@@ -53,7 +53,7 @@ public class ClickManager : MonoBehaviour
     // called from button OnClick() listener
     public void OnClickListener(GameObject go)
     {
-        ResetAfterInteraction = -10;
+        ResetAfterInteraction = -500;
         InteractionState = 2;
         // print("ClickManager.OnClickListener() called");
         PanelText.text = "ClickManager.OnClickListener() called from " + go.name;
