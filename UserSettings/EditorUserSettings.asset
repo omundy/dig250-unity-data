@@ -6,34 +6,34 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedSceneGuid-0:
-      value: 0650025500545e0a0958597442775d49424e4f7a792e7531292f4a61b0e33169
+      value: 57090c5357060d095b5c582448770c45134e1d7f2d7c7e652f7c1c6ae3b4326d
       flags: 0
     RecentlyUsedSceneGuid-1:
-      value: 5b030304060d5e0e5b585b2644770e4542161c2e282b22342e7f1b6abab2603e
+      value: 5403570554515a0c080f092343770943154f4b2f7b7e24347d7b1e37b7e4353b
       flags: 0
     RecentlyUsedSceneGuid-2:
-      value: 525257515d020f0d5a575d7045770b40424e41722e7d20367c7b1935e7b5376b
+      value: 01010d030457505a0c0b0d7012770d134e15417a2a7c226328711c6ab5b53161
       flags: 0
     RecentlyUsedSceneGuid-3:
-      value: 07095703015151080c080a7144770642124e1b7d7e2d7631282a1f6abab16268
+      value: 5a57565754025f0f0e5e5d7440770a16144e1e2c7c2d72627e281b32e6e4613c
       flags: 0
     RecentlyUsedSceneGuid-4:
-      value: 0057565004515c5e5a085b744877594917164f2c7b7c75617b7c1f66bbe3656b
+      value: 525257515d020f0d5a575d7045770b40424e41722e7d20367c7b1935e7b5376b
       flags: 0
     RecentlyUsedSceneGuid-5:
       value: 5303565701500f5d5c0d087b46770f444f4e1e7e2d7a7134757f4f62bae26769
       flags: 0
     RecentlyUsedSceneGuid-6:
-      value: 57090c5357060d095b5c582448770c45134e1d7f2d7c7e652f7c1c6ae3b4326d
+      value: 0057565004515c5e5a085b744877594917164f2c7b7c75617b7c1f66bbe3656b
       flags: 0
     RecentlyUsedSceneGuid-7:
-      value: 5657065e5d505a5e5959592040770b4741161e7c2e7f76327f704867b4b56c6f
+      value: 52080c00510c5c02085d5e7148775e471416497e7e7f24647e794d63b7e4606c
       flags: 0
     RecentlyUsedSceneGuid-8:
-      value: 5403570554515a0c080f092343770943154f4b2f7b7e24347d7b1e37b7e4353b
+      value: 5502505400045c0d0b0b0e2412770e4644161b7b742e7363282f486bb5e4316f
       flags: 0
     RecentlyUsedSceneGuid-9:
-      value: 01010d030457505a0c0b0d7012770d134e15417a2a7c226328711c6ab5b53161
+      value: 5657065e5d505a5e5959592040770b4741161e7c2e7f76327f704867b4b56c6f
       flags: 0
     RecentlyUsedScenePath-0:
       value: 224247031146467f0c1a0d1d382251141a1e162d631b2535232c0e7cc6e12039ddcf37e7e33636323e4cfa320d2a18
@@ -78,3 +78,4 @@ EditorUserSettings:
   m_VCAllowAsyncUpdate: 0
   m_VCScanLocalPackagesOnConnect: 1
   m_ArtifactGarbageCollection: 1
+  m_CompressAssetsOnImport: 1
