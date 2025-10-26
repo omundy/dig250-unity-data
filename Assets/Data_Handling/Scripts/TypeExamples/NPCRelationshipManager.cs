@@ -28,7 +28,7 @@ public class NPCRelationshipManager : MonoBehaviour
     // dictionary of relationships
     public Dictionary<string, NPCRelationship> NPCRelationships = new Dictionary<string, NPCRelationship>();
 
-    // method called when the hit each other
+    // method called when they hit each other
     public void UpdateRelationship(GameObject npc1, GameObject npc2)
     {
         // create a key from both their names (e.g. "NPC3_NPC7" )

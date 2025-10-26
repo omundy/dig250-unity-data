@@ -18,10 +18,13 @@ public class NPCObject : MonoBehaviour
     NPCRelationshipManager NPCRelationshipManager;
     public GameObject textObject;
     TMP_Text textComponent;
+    public Material material;
 
     // constructor
     public void Initialize(int _id, string _Name, bool _GoodGuy)
     {
+        if (material == null)
+            material = GetComponent<Renderer>().material;
         id = _id;
         Name = _Name;
         GoodGuy = _GoodGuy;
@@ -56,6 +59,21 @@ public class NPCObject : MonoBehaviour
 
             // update encounters 
             encounters++;
+
+            if (encounters == 0) material.color = Color.white;
+            else if (encounters % 13 == 1) material.color = Color.aliceBlue;
+            else if (encounters % 13 == 2) material.color = Color.antiqueWhite;
+            else if (encounters % 13 == 3) material.color = Color.aquamarine;
+            else if (encounters % 13 == 4) material.color = Color.azure;
+            else if (encounters % 13 == 5) material.color = Color.beige;
+            else if (encounters % 13 == 6) material.color = Color.bisque;
+            else if (encounters % 13 == 7) material.color = Color.blanchedAlmond;
+            else if (encounters % 13 == 8) material.color = Color.mistyRose;
+            else if (encounters % 13 == 9) material.color = Color.moccasin;
+            else if (encounters % 13 == 10) material.color = Color.paleTurquoise;
+            else if (encounters % 13 ==  11) material.color = Color.peachPuff;
+            else if (encounters % 13 ==  12) material.color = Color.pink;
+
 
             // let relationship manager handle data
             NPCRelationshipManager.UpdateRelationship(gameObject, hit.gameObject);

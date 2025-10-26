@@ -1,5 +1,7 @@
+
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 /**
@@ -7,56 +9,78 @@ using UnityEngine;
  */
 public class BallManager : MonoBehaviour
 {
+    public bool createFromSinglePoint;
+    public bool createFromMultiplePoints;
+    public bool createFromMultipleColliders;
 
+    public float spawnInterval = 1.0f;
+
+    public GameObject ballPrefab;
     public Transform[] spawnPoints;
-    public bool useSpawnPoints = true;
     public BoxCollider2D[] spawnColliders;
     public int originIndex = 0;
     public int destIndex = 0;
-    public GameObject ballPrefab;
-    public float spawnRate = 1.0f;
 
     void Start()
     {
         // start the loop
-        StartCoroutine(InitCreatorLoop(1.0f));
+        StartCoroutine(InitCreatorLoop());
     }
 
-    IEnumerator InitCreatorLoop(float wait)
+    IEnumerator InitCreatorLoop()
     {
         while (true)
         {
-            // change the spawnRate if you like (untested)
-            //spawnRate = Random.Range(1.0f, 3.0f);
-            // wait = spawnRate;
+            // change the spawnInterval if you like
+            // spawnInterval = Random.Range(1.0f, 3.0f);
             // after a moment
-            yield return new WaitForSeconds(wait);
+            yield return new WaitForSeconds(spawnInterval);
 
-            // create a new ball
-            if (useSpawnPoints)
-            {
-                CreateNewBallFromPoints();
-            }
-            else
-            {
-                CreateNewBallFromBounds();
-            }
+            if (createFromSinglePoint)
+                CreateNewBallFromSinglePoint();
+            if (createFromMultiplePoints)
+                CreateNewBallFromMultiplePoints();
+            if (createFromMultipleColliders)
+                CreateNewBallFromMultipleBounds();
         }
     }
-    
-        void CreateNewBallFromPoints()
-    {
-        // update origin index
-        originIndex++;
-        // make sure it isn't > than array
-        if (originIndex >= spawnPoints.Length) originIndex = 0;
-        // set destination index (to opposite side)
-        if (originIndex < 2) destIndex = originIndex + 2; // 0,2 or 1,3
-        else destIndex = originIndex - 2; // 2,0 or 3,1
 
-        // get a position that doesn't contain any other colliders
-        Vector3 spawnPosition = spawnPoints[originIndex].position;
-        // get the spawn rotation
+    void CreateNewBallFromSinglePoint()
+    {
+        // add ball to world
+        AddGameObjectToWorld(ballPrefab, spawnPoints[2].position, spawnPoints[0].position, Color.red);
+    }
+
+    void CreateNewBallFromMultiplePoints()
+    {
+        // increase origin index (reset to zero if greater than num spawn locations)
+        originIndex = originIndex + 1 >= spawnPoints.Length ? 0 : ++originIndex;
+        // set destination index to opposite side (0=>2, 1=>3, 2=>0, 3=>1)
+        destIndex = originIndex < 2 ? originIndex + 2 : originIndex - 2;
+        // add ball to world
+        AddGameObjectToWorld(ballPrefab, spawnPoints[originIndex].position, spawnPoints[destIndex].position, Color.green);
+    }
+
+    void CreateNewBallFromMultipleBounds()
+    {
+        // increase origin index (reset to zero if greater than num spawn locations)
+        originIndex = originIndex + 1 >= spawnColliders.Length ? 0 : ++originIndex;
+        // set destination index to opposite side (0=>2, 1=>3, 2=>0, 3=>1)
+        destIndex = originIndex < 2 ? originIndex + 2 : originIndex - 2;
+        // add ball to world
+        AddGameObjectToWorld(
+            ballPrefab,
+            // a random position inside the collider bounds
+            RandomPointInBounds(spawnColliders[originIndex].bounds),
+            RandomPointInBounds(spawnColliders[destIndex].bounds),
+            Color.blue
+        );
+    }
+
+    // basic instantiate script
+    void AddGameObjectToWorld(GameObject prefab, Vector3 spawnPosition, Vector3 destPosition, Color color)
+    {
+        // spawn rotation
         Quaternion spawnRotation = new Quaternion();
         // no random rotation
         spawnRotation.eulerAngles = new Vector3(0f, 0f, 0f);
@@ -65,38 +89,10 @@ public class BallManager : MonoBehaviour
         // reference to script (contains all the other references we need)
         Ball ballScript = obj.GetComponent<Ball>();
         // call Init() on script
-        ballScript.Init(spawnPosition, spawnPoints[destIndex].position);
+        ballScript.Init(spawnPosition, destPosition, color);
         // parent under Manager
         obj.transform.parent = gameObject.transform;
     }
-
-    void CreateNewBallFromBounds()
-    {
-        // update origin index
-        originIndex++;
-        // make sure it isn't > than array
-        if (originIndex >= spawnColliders.Length) originIndex = 0;
-        // set destination index (to opposite side)
-        if (originIndex < 2) destIndex = originIndex + 2; // 0,2 or 1,3
-        else destIndex = originIndex - 2; // 2,0 or 3,1
-
-        // get a position that doesn't contain any other colliders
-        Vector3 spawnPosition = RandomPointInBounds(spawnColliders[originIndex].bounds);
-        // get the spawn rotation
-        Quaternion spawnRotation = new Quaternion();
-        // no random rotation
-        spawnRotation.eulerAngles = new Vector3(0f, 0f, 0f);
-        // instantiate prefab @ spawn position
-        GameObject obj = (GameObject)Instantiate(ballPrefab, spawnPosition, spawnRotation);
-        // reference to script (contains all the other references we need)
-        Ball ballScript = obj.GetComponent<Ball>();
-        // call Init() on script
-        ballScript.Init(spawnPosition, RandomPointInBounds(spawnColliders[destIndex].bounds));
-        // parent under Manager
-        obj.transform.parent = gameObject.transform;
-    }
-
-
 
     /**
      *  Return random Vector3 position inside bounds
