@@ -8,11 +8,12 @@ public class Ball : MonoBehaviour {
     public Vector3 destination;
     public float speed = 1.0f;
 
-    public void Init (Vector3 _origin, Vector3 _destination)
+    public void Init (Vector3 _origin, Vector3 _destination, Color color)
     {
         origin = _origin;
         destination = _destination;
-        speed = Random.Range (0.5f, 1.5f);
+        speed = Random.Range(0.5f, 1.5f);
+        GetComponent<Renderer>().material.color = color;
     }
 
     void Update ()
