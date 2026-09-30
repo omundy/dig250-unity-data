@@ -50,7 +50,7 @@ public class NPCObject : MonoBehaviour
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
         // ignore self collision
-        if (hit.gameObject.GetInstanceID() == gameObject.GetInstanceID()) return;
+        if (hit.gameObject.GetEntityId() == gameObject.GetEntityId()) return;
 
         // if we touched an NPC
         if (hit.gameObject.tag == "NPC")
