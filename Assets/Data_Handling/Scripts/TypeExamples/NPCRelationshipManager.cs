@@ -26,7 +26,7 @@ public struct NPCRelationship
 public class NPCRelationshipManager : MonoBehaviour
 {
     // dictionary of relationships
-    public Dictionary<string, NPCRelationship> NPCRelationships = new Dictionary<string, NPCRelationship>();
+    [System.NonSerialized] public Dictionary<string, NPCRelationship> NPCRelationships = new Dictionary<string, NPCRelationship>();
 
     // method called when they hit each other
     public void UpdateRelationship(GameObject npc1, GameObject npc2)

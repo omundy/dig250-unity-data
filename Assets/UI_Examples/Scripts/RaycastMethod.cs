@@ -9,8 +9,8 @@ using UnityEngine.UI;
  */
 public class RaycastMethod : MonoBehaviour
 {
-    public Ray ray;
-    public RaycastHit hit;
+    [System.NonSerialized] public Ray ray;
+    [System.NonSerialized] public RaycastHit hit;
     public bool MouseOverGO;
     public TMP_Text PanelText;
     public ClickManager ClickManager;

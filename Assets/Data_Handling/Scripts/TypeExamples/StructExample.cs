@@ -19,9 +19,9 @@ public struct NPC
 public class StructExample : MonoBehaviour
 {
     // dictionary of strings
-    public Dictionary<string, string> stringDict = new Dictionary<string, string>();
+    [System.NonSerialized] public Dictionary<string, string> stringDict = new Dictionary<string, string>();
     // dictionary of structs
-    public Dictionary<string, NPC> structDict = new Dictionary<string, NPC>();
+    [System.NonSerialized] public Dictionary<string, NPC> structDict = new Dictionary<string, NPC>();
 
 
 
