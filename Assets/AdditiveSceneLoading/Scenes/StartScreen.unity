@@ -129,7 +129,6 @@ GameObject:
   m_Component:
   - component: {fileID: 287085980}
   - component: {fileID: 287085979}
-  - component: {fileID: 287085978}
   - component: {fileID: 287085981}
   m_Layer: 0
   m_Name: Main Camera
@@ -138,14 +137,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &287085978
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 287085977}
-  m_Enabled: 1
 --- !u!20 &287085979
 Camera:
   m_ObjectHideFlags: 0
@@ -266,11 +257,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 113786193910883966, guid: bf2ffad2c0b854b79bf3bb8ec1ee85ec, type: 3}
       propertyPath: m_Name
-      value: LoadGameManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 113786193910883967, guid: bf2ffad2c0b854b79bf3bb8ec1ee85ec, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
+      value: LoadSceneManager
       objectReference: {fileID: 0}
     - target: {fileID: 113786193910883967, guid: bf2ffad2c0b854b79bf3bb8ec1ee85ec, type: 3}
       propertyPath: m_LocalPosition.x
