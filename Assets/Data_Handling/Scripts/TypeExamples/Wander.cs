@@ -36,7 +36,7 @@ public class Wander : MonoBehaviour
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
         // ignore self collision
-        if (hit.gameObject.GetInstanceID() == gameObject.GetInstanceID()) return;
+        if (hit.gameObject.GetEntityId() == gameObject.GetEntityId()) return;
 
         // if we touched a wall or NPC
         if (hit.gameObject.tag == "Wall" || hit.gameObject.tag == "NPC")

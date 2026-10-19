@@ -13,8 +13,8 @@ using System.Collections.Generic;
  *  - Stores objects in Dictionary for later use
  */
 
-/// 1. Install https://openupm.com/
-/// 2. Install lib https://openupm.com/packages/jillejr.newtonsoft.json-for-unity/
+/// Requires Unity's official Newtonsoft package (com.unity.nuget.newtonsoft-json)
+/// Window > Package Manager > + > Install package by name... > com.unity.nuget.newtonsoft-json
 
 
 // a custom class to hold each JSON object in the data returned
